@@ -2,9 +2,12 @@ const TelegramBot = require('node-telegram-bot-api');
 const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 // Configuration - IMPORTANT: Replace these values
-const BOT_TOKEN = '7578753418:AAGpWyPK7ZotWrRtDbRF7707NTpbo2hP86I';
+const BOT_TOKEN = process.env.BOT_TOKEN;
 // const CHAT_ID = '7981868134';
 const CHECK_INTERVAL = 5000; // 180 seconds
 const LOG_FILE = path.join(__dirname, 'bot-health-check.log');
